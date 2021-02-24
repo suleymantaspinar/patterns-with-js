@@ -1,5 +1,7 @@
-const fs = require('fs');
 const path = require('path');
+
+const FS_Proxy = require('./lib/FS_proxy')
+const fs = new FS_Proxy(require('fs'));
 
 const txtFile = path.join(__dirname, 'README.txt');
 const mdFile = path.join(__dirname, 'README.md');
