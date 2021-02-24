@@ -1,3 +1,5 @@
+const localStorage = require('./lib/localStorage')
+
 console.log(`local storage length: ${localStorage.length}`);
 
 const uid = localStorage.getItem("user_id");
