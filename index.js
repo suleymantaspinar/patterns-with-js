@@ -1,14 +1,14 @@
-const Person = require('./lib/Person');
+const PersonBuilder = require('./lib/PersonBuilder');
 
 // Employees
-const sue = new Person('Sue', true, true, 60)
-const bill = new Person('Bill', true, false, 20)
+const sue = new PersonBuilder('Sue').makeEmployee().makeManager(60).build();
+const bill = new PersonBuilder('Bill').makeEmployee().makePartTime().build();
 
 // Shoppers
-const charles = new Person('Charles', false, false, 0, 500, ['jeans, sunglasses'])
-const tabitha = new Person('Tabbitha', false, false, 0, 1000)
+const charles = new PersonBuilder('Charles').withMoney(500).withList(['jeans, sunglasses']).build();
+const tabitha = new PersonBuilder('Tabbitha').withMoney(1000).build();
 
-console.log(sue.toString())
-console.log(bill.toString())
-console.log(charles.toString())
-console.log(tabitha.toString())
+console.log(sue.toString());
+console.log(bill.toString());
+console.log(charles.toString());
+console.log(tabitha.toString());
